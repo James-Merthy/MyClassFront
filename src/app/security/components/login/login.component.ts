@@ -24,7 +24,16 @@ export class LoginComponent implements OnInit {
     this._auth.login(this.username, this.password).subscribe(data => {
       let token = data["token"];
       this._session.login(token);
-      this._router.navigate(["/"]);
+      if (this._session.isAdmin())
+      this._router.navigate(["/admin"]).then(res => console.log("Has changed"));
+      if (this._session.isProf())
+        this._router.navigate(["/prof"]).then(res => console.log("Has changed"));
+      if (this._session.isEleve())
+        this._router.navigate(["/eleve"]).then(res => console.log("Has changed"));
+
     });
   }
+
+
+
 }

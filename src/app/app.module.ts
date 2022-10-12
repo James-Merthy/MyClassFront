@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import {SecurityModule} from "../../module/security/security.module";
+import {SecurityModule} from "./security/security.module";
+import { AdminComponent } from './components/admin/admin.component';
+import { ProfComponent } from './components/prof/prof.component';
+import { EleveComponent } from './components/eleve/eleve.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdminComponent,
+    ProfComponent,
+    EleveComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {SessionService} from "../../module/security/services/session.service";
-import {AuthService} from "../../module/security/services/auth.service";
+import {SessionService} from "./security/services/session.service";
+import {AuthService} from "./security/services/auth.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -33,7 +33,9 @@ export class AppComponent {
       console.log(data["token"]);
       let token = data["token"];
       this._session.login(token);
-      this.router.navigate(["/"]);
+      this.router.navigate(["/admin"]);
+      this.router.navigate(["/prof"]);
+      this.router.navigate(["/eleve"]);
     });
   }
 }
