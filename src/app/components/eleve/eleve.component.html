@@ -1,50 +1,37 @@
 <div class="wrapper fadeInDown">
   <h1>Student</h1>
 
-
-  <div id="formContent">
+  <div id="formContentEleve">
     <!--    <div class="p-3 mb-2 bg-danger text-white">user</div>-->
     <!-- Tabs Titles -->
+    <nav class="navbar navbar-dark bg-dark">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="../assets/img/adminImg.png" id="icon" alt="User Icon"/>
-    </div>
+      <img src="../assets/img/iconeleve.png" id="icon" alt="User Icon"/>
 
-    <!-- Login Form -->
-    <div>
+      <a class="fadeIn fourth" href="http://localhost:4200"  role="button">deconnexion</a>
 
-      <div class="btn-group-vertical">
-
-
-
-      </div>
-
-      <!--        <div class = "row" >-->
-
-      <!--          <input type="submit" class="fadeIn fourth" value="Log In">-->
-
-      <!--          <input class="fadeIn fourth" type="reset" value="Reset">-->
-
-      <!--          <input class="fadeIn fourth"  href="http://localhost:4200" value="deconnexion">-->
-
-      <!--&lt;!&ndash;          <a class="fadeIn fourth" href="http://localhost:4200" role="button">deconnexion</a>&ndash;&gt;-->
-
-      <!--        </div>-->
+      <a class="fadeIn fourth"  routerLink="/lecon"  role="button">leçon</a>
 
 
     </div>
-
-
 
     <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <!--      <a class="underlineHover" href="#">Forgot Password?</a>-->
+    <div id="formFooterEleve">
+
     </div>
+
 
   </div>
 
-  <a class="fadeIn fourth" href="http://localhost:4200" role="button">deconnexion</a>
+
+
 </div>
 
 <router-outlet></router-outlet>

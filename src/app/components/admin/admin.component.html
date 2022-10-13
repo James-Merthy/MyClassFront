@@ -5,37 +5,24 @@
   <div id="formContent">
     <!--    <div class="p-3 mb-2 bg-danger text-white">user</div>-->
     <!-- Tabs Titles -->
+    <nav class="navbar navbar-dark bg-dark">
+      <form class="form-inline">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+      </form>
+    </nav>
 
     <!-- Icon -->
     <div class="fadeIn first">
       <img src="../assets/img/adminImg.png" id="icon" alt="User Icon"/>
+      <a class="fadeIn fourth" href="http://localhost:4200" role="button">deconnexion</a>
+      <a class="fadeIn fourth"  role="button">create</a>
+      <a class="fadeIn fourth"  role="button">delete</a>
     </div>
-
-    <!-- Login Form -->
-    <div>
-
-      <div class="btn-group-vertical">
-
-
-
-      </div>
-
-<!--        <div class = "row" >-->
-
-<!--          <input type="submit" class="fadeIn fourth" value="Log In">-->
-
-<!--          <input class="fadeIn fourth" type="reset" value="Reset">-->
-
-<!--          <input class="fadeIn fourth"  href="http://localhost:4200" value="deconnexion">-->
-
-<!--&lt;!&ndash;          <a class="fadeIn fourth" href="http://localhost:4200" role="button">deconnexion</a>&ndash;&gt;-->
-
-<!--        </div>-->
-
-
-    </div>
-
-
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
@@ -44,7 +31,7 @@
 
   </div>
 
-  <a class="fadeIn fourth" href="http://localhost:4200" role="button">deconnexion</a>
+
 </div>
 
     <router-outlet></router-outlet>

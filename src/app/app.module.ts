@@ -3,12 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {SecurityModule} from "./security/security.module";
 import { AdminComponent } from './components/admin/admin.component';
 import { ProfComponent } from './components/prof/prof.component';
 import { EleveComponent } from './components/eleve/eleve.component';
+import { LeconComponent } from './components/lecon/lecon.component';
+import { LeconPageComponent } from './components/lecon/lecon-page/lecon-page.component';
+import { LeconCreateComponent } from './components/lecon/lecon-create/lecon-create.component';
+import { CreatePageComponent } from './components/admin/create-page/create-page.component';
+import { EleveListComponent } from './components/eleve/eleve-list/eleve-list.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +21,20 @@ import { EleveComponent } from './components/eleve/eleve.component';
     AdminComponent,
     ProfComponent,
     EleveComponent,
+    LeconComponent,
+    LeconPageComponent,
+    LeconCreateComponent,
+    CreatePageComponent,
+    EleveListComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    SecurityModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        SecurityModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   exports: [],
   bootstrap: [AppComponent]
