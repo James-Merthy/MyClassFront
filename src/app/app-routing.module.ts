@@ -9,6 +9,8 @@ import {LeconPageComponent} from "./components/lecon/lecon-page/lecon-page.compo
 import {LeconCreateComponent} from "./components/lecon/lecon-create/lecon-create.component";
 import {EleveListComponent} from "./components/eleve/eleve-list/eleve-list.component";
 import {CreatePageComponent} from "./components/admin/create-page/create-page.component";
+import {InsertStudentComponent} from "./components/admin/create-page/insert-student/insert-student.component";
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: "full" },
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: 'lecon-page', component: LeconPageComponent },
   { path: 'lecon-create', component: LeconCreateComponent },
   { path: 'eleve-list', component: EleveListComponent },
-  { path: 'create-page', component: CreatePageComponent }
+  { path: 'create-page', component: CreatePageComponent },
+  { path: 'insert-student', component: InsertStudentComponent }
+
 
 
 ];

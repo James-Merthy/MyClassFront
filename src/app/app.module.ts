@@ -12,8 +12,10 @@ import { EleveComponent } from './components/eleve/eleve.component';
 import { LeconComponent } from './components/lecon/lecon.component';
 import { LeconPageComponent } from './components/lecon/lecon-page/lecon-page.component';
 import { LeconCreateComponent } from './components/lecon/lecon-create/lecon-create.component';
-import { CreatePageComponent } from './components/admin/create-page/create-page.component';
 import { EleveListComponent } from './components/eleve/eleve-list/eleve-list.component';
+import {CreatePageComponent} from "./components/admin/create-page/create-page.component";
+import { InsertStudentComponent } from './components/admin/create-page/insert-student/insert-student.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { EleveListComponent } from './components/eleve/eleve-list/eleve-list.com
     LeconPageComponent,
     LeconCreateComponent,
     CreatePageComponent,
-    EleveListComponent
+    EleveListComponent,
+    InsertStudentComponent,
+
   ],
     imports: [
         BrowserModule,

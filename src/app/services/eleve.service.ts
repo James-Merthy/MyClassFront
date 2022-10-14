@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {ILecon} from "../models/ILecon";
 import {SessionService} from "../security/services/session.service";
 import {IStudent} from "../models/IStudent";
-import {IUserStudent} from "../models/IUserStudent";
+
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +51,19 @@ export class EleveService {
     }
     const headers = new HttpHeaders().append("Authorization", `Bearer ${token}`);
     console.log(form);
-    return this._http.post<any>("localhost:8080/api/user/register/eleve" , form, {headers});
+    return this._http.post<any>("http://localhost:8080/api/user/register/eleve" , form, {headers});
+  }
+
+  public createStudent(form: any): Observable<any> {
+    let token: string = "";
+    if (localStorage.getItem("token") != null)
+    { // @ts-ignore
+      token = localStorage.getItem("token");
+      console.log(token);
+    }
+    const headers = new HttpHeaders().append("Authorization", `Bearer ${token}`);
+    console.log(form);
+    return this._http.post<any>("http://localhost:8080/eleve" , form, {headers});
   }
 
 }

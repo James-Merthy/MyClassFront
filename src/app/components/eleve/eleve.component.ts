@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {IStudent} from "../../models/IStudent";
 import {EleveService} from "../../services/eleve.service";
+import {SessionService} from "../../security/services/session.service";
 
 @Component({
   selector: 'app-eleve',
@@ -10,14 +11,19 @@ import {EleveService} from "../../services/eleve.service";
 })
 export class EleveComponent implements OnInit {
 
-  eleves: IStudent[] = [];
+  eleve: string = "";
 
-  constructor(private eleveService: EleveService) { }
+  constructor(private session: SessionService) { }
 
   ngOnInit(): void {
-    this.eleveService.getAll().subscribe(data => {
-      this.eleves = data;
-    });
+
+
+    let token = "";
+    if (localStorage.getItem("token"))
+    { // @ts-ignore
+      token = localStorage.getItem("token");
+      this.eleve = this.session.getUser(token);
+    }
 
   }
 

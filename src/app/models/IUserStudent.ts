@@ -1,4 +1,4 @@
-export interface  IUserStudent {
+export interface IUserStudent {
   username: string;
   password: string;
 
