@@ -1,0 +1,35 @@
+<div class="wrapper fadeInDown">
+  <h1>Create Leçon</h1>
+  <div id="formContentLecon">
+
+    <!--    <div class="p-3 mb-2 bg-danger text-white">user</div>-->
+    <!-- Tabs Titles -->
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../assets/img/proficon.png" id="icon" alt="User Icon"/>
+
+
+      <form [formGroup]="profileForm" (submit)="onSubmit()">
+
+        <label for="nom"> </label>
+        <input id="nom" type="text" formControlName="nom">
+        <button class="btn btn-success" type="submit">submit</button>
+
+
+      </form>
+
+
+
+      <a  class="fadeIn fourth" href="http://localhost:4200" role="button">deconnexion</a>
+
+      <a class="fadeIn fourth"  role="button" routerLink="/">retour</a>
+
+
+
+    </div>
+    <!-- Remind Passowrd -->
+    <div id="formFooterLecon">
+      <!--      <a class="underlineHover" href="#">Forgot Password?</a>-->
+    </div>
+  </div>
+</div>

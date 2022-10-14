@@ -3,22 +3,20 @@ import {Observable} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {ILecon} from "../models/ILecon";
 import {SessionService} from "../security/services/session.service";
-import {IStudent} from "../models/IStudent";
-import {IUserStudent} from "../models/IUserStudent";
 
 @Injectable({
   providedIn: 'root'
 })
-export class EleveService {
+export class LeconsService {
 
   token: string | null = null;
 
   constructor(private _http: HttpClient, private _sessionService: SessionService) {
-    _sessionService.Token$.subscribe((token) => this.token = token);
+    _sessionService.Token$.subscribe( (token) => this.token = token );
   }
 
   // methods
-  getAll(): Observable<IStudent[]> {
+  getAll(): Observable<ILecon[]> {
     let token: string = "";
 
     if (localStorage.getItem("token") != null)
@@ -26,24 +24,12 @@ export class EleveService {
       token = localStorage.getItem("token");
     }
 
-
-
     const headers = new HttpHeaders().append("Authorization", `Bearer ${token}`);
-    return this._http.get<IStudent[]>("http://localhost:8080/eleve/all" , {headers}) ;
+
+    return this._http.get<ILecon[]>("http://localhost:8080/lecon/all", { headers: headers });
   }
 
-  // public createStudent(form: any): Observable<any> {
-  //   let token: string = "";
-  //   if (localStorage.getItem("token") != null)
-  //   { // @ts-ignore
-  //     token = localStorage.getItem("token");
-  //     console.log(token);
-  //   }
-  //   const headers = new HttpHeaders().append("Authorization", `Bearer ${token}`);
-  //   console.log(form);
-  //   return this._http.post<any>("http://localhost:8080/lecon/create" , form, {headers});
-  // }
-  public createStudentUser(form: any): Observable<any> {
+  public add(form: any): Observable<any> {
     let token: string = "";
     if (localStorage.getItem("token") != null)
     { // @ts-ignore
@@ -52,7 +38,10 @@ export class EleveService {
     }
     const headers = new HttpHeaders().append("Authorization", `Bearer ${token}`);
     console.log(form);
-    return this._http.post<any>("localhost:8080/api/user/register/eleve" , form, {headers});
+    return this._http.post<any>("http://localhost:8080/lecon/create" , form, {headers});
   }
 
+  getOne(id: number): Observable<ILecon> {
+    return this._http.get<ILecon>("http://localhost:8080/lecon/" + id);
+  }
 }

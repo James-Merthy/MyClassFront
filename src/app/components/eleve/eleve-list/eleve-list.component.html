@@ -1,0 +1,32 @@
+<div class="wrapper fadeInDown">
+  <h1>Eleve</h1>
+  <div id="formContentEleve">
+
+    <nav class="navbar navbar-dark bg-dark">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+    <!--    <div class="p-3 mb-2 bg-danger text-white">user</div>-->
+    <!-- Tabs Titles -->
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../assets/img/proficon.png" id="icon" alt="User Icon"/>
+
+      <a  class="fadeIn fourth" href="http://localhost:4200" role="button">deconnexion</a>
+
+      <a class="fadeIn fourth"  role="button" routerLink="/..">retour</a>
+
+      <div *ngFor="let eleve of eleves">
+
+           <a class="fadeIn fourth"  role="button" >{{eleve.prenom}} {{eleve.nom}} {{eleve.username}} </a>
+      </div>
+
+    </div>
+    <!-- Remind Passowrd -->
+    <div id="formFooterEleve">
+      <!--      <a class="underlineHover" href="#">Forgot Password?</a>-->
+    </div>
+  </div>
+</div>
